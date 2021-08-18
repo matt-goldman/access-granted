@@ -1,0 +1,42 @@
+﻿@model SSW.Med_Man.MVC.Models.Administrations
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Administrations</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.patient)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.patient.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.medication)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.medication.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dose)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dose)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.timeGiven)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.timeGiven)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

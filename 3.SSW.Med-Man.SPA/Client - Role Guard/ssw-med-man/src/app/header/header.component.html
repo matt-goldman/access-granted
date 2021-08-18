@@ -1,0 +1,30 @@
+<nav class="nav-elevation-z6">
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-button routerLink="/home"><mat-icon>local_hospital</mat-icon>&nbsp;SSW.Med-Man</button>
+    <span *ngIf="loggedIn">
+      <button mat-button [matMenuTriggerFor]="patientMenu">Patients</button>
+      <mat-menu #patientMenu="matMenu">
+        <button mat-menu-item routerLink="/patients">View Patients</button>  
+        <button mat-menu-item routerLink="/addPatient">Add Patient</button>  
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="medMenu">Medications</button>
+      <mat-menu #medMenu="matMenu">
+        <button mat-menu-item routerLink="/medications">View Medications</button>  
+        <button mat-menu-item routerLink="/medications">Add Medications</button>  
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="presMenu">Prescriptions</button>
+      <mat-menu #presMenu="matMenu">
+        <button mat-menu-item routerLink="/prescriptions">View Prescriptions</button>  
+        <button mat-menu-item routerLink="/addPrescription">Prescribe Medicaion</button>  
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="adminMenu">Administriations</button>
+      <mat-menu #adminMenu="matMenu">
+        <button mat-menu-item routerLink="/administrations">View Administrations</button>  
+        <button mat-menu-item routerLink="/addAdministration">Administer Medications</button>  
+      </mat-menu>
+    </span>
+    <div class="flex-spacer"></div>
+    <button *ngIf="loggedIn" mat-button (click)="logout()">Logout</button>
+    <button *ngIf="!loggedIn" mat-button routerLink="/login">Login</button>
+  </mat-toolbar>
+</nav>

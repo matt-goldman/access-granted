@@ -1,0 +1,36 @@
+<div class="flex-container login-main">
+  <div class="flex-row">
+    <h1 class="app-heading">SSW.Medication-Manager</h1>
+  </div>
+  <div class="flex-row">
+    <lottie-animation-view class="child"
+    [options]="lottieConfig"
+    [width]="300"
+    [height]="400"
+    (animCreated)="handleAnimation($event)">
+    </lottie-animation-view>
+      <form #f="ngForm" (ngSubmit)=login(f) name="loginForm" id="loginForm">
+    <mat-card class="child">
+
+      <mat-card-header>
+        <mat-card-title>Login Page</mat-card-title>
+      </mat-card-header>
+      <mat-card-content fxLayout="column">
+      
+          <mat-form-field>
+            <input name="email" matInput placeholder="Email" [ngModel]="loginUserDTO.email" #email="ngModel">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input name="password" type="password" matInput placeholder="Password" [ngModel]="loginUserDTO.password" #password="ngModel">
+          </mat-form-field>
+        
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" type="submit">Login</button>
+      </mat-card-actions>
+    </mat-card>
+    </form>
+  </div>
+  
+</div>

@@ -1,0 +1,42 @@
+<div class="flex-container login-main">
+    <div class="flex-row">
+      <h1 class="page-heading">Administrations</h1>
+    </div>
+    <div class="flex-row page-table">
+        <form>
+      <mat-card class="child page-table add-patient">
+        <mat-card-header>
+          <mat-card-title>Administer Medication</mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout="column">
+            <mat-form-field>
+                <input name="patientInput" matInput placeholder="Patient" [matAutocomplete]="pat" [formControl]="patientControl">
+                <mat-autocomplete #pat="matAutocomplete" [displayWith]="displayPatientFn">
+                    <mat-option *ngFor="let patient of filteredPatients | async" [value]="patient">
+                    <span>{{patient.fullName}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        <br/>
+            <mat-form-field>
+                <input name="medicationInput" matInput placeholder="Medication" [matAutocomplete]="med" [formControl]="medicationControl">
+                <mat-autocomplete #med="matAutocomplete" [displayWith]="displayMedicationFn">
+                    <mat-option *ngFor="let medication of filteredMeds | async" [value]="medication">
+                    <span>{{medication.name}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+<br/>    
+            <mat-form-field>
+                <input name="dose" matInput placeholder="Dose (mg)" [formControl]="doseControl">
+            </mat-form-field>
+            <br>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="primary" type="submit" (click)="addAdministration()">Add</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    </div>
+    
+  </div>

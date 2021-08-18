@@ -1,0 +1,41 @@
+﻿@model SSW.Med_Man.MVC.Models.Prescription
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Prescription</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="patientId" class="control-label">Patient</label>
+                <select asp-for="patientId" class ="form-control" asp-items="ViewBag.patient"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="medicationId" class="control-label">Medication</label>
+                <select asp-for="medicationId" class ="form-control" asp-items="ViewBag.medication"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="dose" class="control-label">Dose (mg)</label>
+                <input asp-for="dose" class="form-control" />
+                <span asp-validation-for="dose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

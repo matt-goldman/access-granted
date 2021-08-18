@@ -1,0 +1,24 @@
+﻿@model SSW.Med_Man.MVC.Models.Medication
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Medication</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

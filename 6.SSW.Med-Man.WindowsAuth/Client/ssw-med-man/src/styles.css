@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.app-heading {
+    color: white;
+    text-align: center;
+}
+
+.page-heading {
+    color: white;
+    text-align: start;
+}
+
+.login-main{
+    margin-top: 5%;
+}
+.mat-card{
+    min-width: 30%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    align-content:  space-between;
+    min-width: 50%;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    min-width: 50%;
+    align-items: center;
+    justify-content: center;
+    align-content:  space-between;
+}
+
+.flex-row-left {
+    display: flex;
+    flex-direction: row;
+    min-width: 50%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content:  space-between;
+}
+
+.child {
+    margin: 20px;
+}
+
+.page-table {
+    min-width: 70%;
+    align-items: center;
+}
+
+.add-patient {
+    min-width: 400px;
+}

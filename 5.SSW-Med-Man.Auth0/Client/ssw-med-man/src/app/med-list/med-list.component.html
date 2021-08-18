@@ -1,0 +1,21 @@
+<table mat-table [dataSource]="medications" class="mat-elevation-z8 page-table" *ngIf="areMedications">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.fullName }} </td>
+    </ng-container>
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+      <td mat-cell *matCellDef="let element"> {{element.dob | date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="scripts">
+      <th mat-header-cell *matHeaderCellDef> Prescriptions </th>
+      <td mat-cell *matCellDef="let element">   <button mat-raised-button color="accent" routerLink="/addPatient">View</button> </td>
+    </ng-container>
+    <ng-container matColumnDef="admins">
+      <th mat-header-cell *matHeaderCellDef> Administrations </th>
+      <td mat-cell *matCellDef="let element">   <button mat-raised-button color="accent" routerLink="/addPatient">View</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
